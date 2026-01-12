@@ -1,0 +1,23 @@
+{
+  "name": "healthtime-api",
+  "version": "1.0.0",
+  "description": "Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "fast-xml-parser": "^5.3.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^9.0.2",
+    "xsd-schema-validator": "^0.11.0"
+  }
+}

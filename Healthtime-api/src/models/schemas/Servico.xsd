@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Servico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cod_servico" type="xs:integer"/>
+                <xs:element name="nome_servico" type="xs:string"/>
+                <xs:element name="especialidade" type="xs:string"/>
+
+                <xs:element name="cod_prioridade" type="xs:integer"/>
+                <xs:element name="descricao_prioridade" type="xs:string"/>
+
+                <xs:element name="tipo_cuidado">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="codigo" type="xs:integer"/>
+                            <xs:element name="descricao">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Consulta"/>
+                                        <xs:enumeration value="Cirurgia"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

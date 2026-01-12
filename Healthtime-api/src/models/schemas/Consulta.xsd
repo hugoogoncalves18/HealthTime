@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Consulta">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_hospital" type="xs:positiveInteger"/>
+                <xs:element name="nome_hospital" type="xs:string"/>
+                <xs:element name="cod_servico" type="xs:integer"/>
+                <xs:element name="especialidade" type="xs:string"/>
+                
+                <xs:element name="ano" type="xs:gYear"/>
+                <xs:element name="mes" type="xs:string"/>
+                <xs:element name="data_completa" type="xs:date"/>
+
+                <xs:element name="populacao_alvo">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Adulto"/>
+                            <xs:enumeration value="Criança"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="tipo_lista">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Geral"/>
+                            <xs:enumeration value="Não Oncológica"/>
+                            <xs:enumeration value="Oncológica"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="num_utentes" type="xs:nonNegativeInteger"/>
+                
+                <xs:element name="tempo_medio_espera">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="global" type="xs:decimal"/>
+                            <xs:element name="normal" type="xs:decimal" minOccurs="0"/>
+                            <xs:element name="prioritario" type="xs:decimal" minOccurs="0"/>
+                            <xs:element name="muito_prioritario" type="xs:decimal" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:complexType name="DadosCorType">
+        <xs:sequence>
+            <xs:element name="tempo_medio" type="xs:nonNegativeInteger" default="0"/>
+            <xs:element name="num_utentes" type="xs:nonNegativeInteger" default="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Urgencia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_hospital" type="xs:positiveInteger"/>
+                <xs:element name="nome_hospital" type="xs:string"/>
+                <xs:element name="data_registo" type="xs:dateTime"/>
+
+                <xs:element name="tipologia" type="xs:string"/> <xs:element name="estado_urgencia">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="Aberta"/>
+                            <xs:enumeration value="Fechada"/>
+                            <xs:enumeration value="Condicionada"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+
+                <xs:element name="triagem">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="vermelho" type="DadosCorType"/>
+                            <xs:element name="laranja" type="DadosCorType"/>
+                            <xs:element name="amarelo" type="DadosCorType"/>
+                            <xs:element name="verde" type="DadosCorType"/>
+                            <xs:element name="azul" type="DadosCorType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

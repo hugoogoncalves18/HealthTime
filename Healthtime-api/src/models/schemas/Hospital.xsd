@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Hospital">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id_hospital" type="xs:positiveInteger"/>
+                <xs:element name="nome_hospital" type="xs:string"/>
+                <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+                
+                <xs:element name="morada" type="xs:string"/>
+                <xs:element name="distrito" type="xs:string"/>
+                
+                <xs:element name="localizacao">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="latitude" type="xs:decimal"/>
+                            <xs:element name="longitude" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="regiao_nuts1" type="xs:string" minOccurs="0"/>
+                <xs:element name="regiao_nuts2" type="xs:string"/> <xs:element name="regiao_nuts3" type="xs:string" minOccurs="0"/>
+
+                <xs:element name="contactos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="telefone" type="xs:string" minOccurs="0"/>
+                            <xs:element name="email" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
